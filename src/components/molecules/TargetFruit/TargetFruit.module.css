@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid black;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+  padding: 1em;
+  transition: all 400ms ease-out;
+}
+
+.card-container-active {
+  background: linear-gradient(45deg, #19b9b9, #fff);
+  color: #fff;
+}
+
+.card-container-inactive {
+  background: linear-gradient(45deg, #992929, #fff);
+  color: #fff;
+}

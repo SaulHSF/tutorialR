@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "module": "esnext",
+    "outDir": "build",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "src",
     "lib": [
       "dom",
       "dom.iterable",
@@ -8,17 +19,19 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
+  "extends": "./tsconfig.base.json",
   "include": [
     "src"
   ]

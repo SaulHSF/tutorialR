@@ -1,0 +1,17 @@
+.neutro {
+  border: 1px solid #e8e8e8;
+  padding: 0.3em 0.6em;
+  outline: none;
+}
+
+.available {
+  border: 1px solid green;
+  padding: 0.3em 0.6em;
+  outline: none;
+}
+
+.in-available {
+  border: 1px solid red;
+  padding: 0.3em 0.6em;
+  outline: none;
+}

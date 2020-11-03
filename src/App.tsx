@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// libs
+import React, { useState, ChangeEvent } from 'react';
 
-function App() {
+// Organisms
+import ControllerForm from 'components/organisms/Form/ControllerForm';
+import SearchImage from 'components/organisms/SearchImage';
+import SelectorScreen from 'components/molecules/SelectorScreen';
+import SearchFilms from 'components/organisms/SearchFilms';
+import ChatRandom from 'components/organisms/ChatRamdom';
+import ListTask from 'components/organisms/ListTask';
+import FatherComponent from 'components/organisms/ObserverPatter'; // ejemplo de patron observador.
+import FatherContextComponent from 'components/organisms/apiContext'; // api context
+
+// Constants
+import { OptionsSelectedModule } from 'config';
+
+const App = () => {
+  const [optionSelected, setOptionSelected] = useState(OptionsSelectedModule.observerPattern);
+  const onChangeOption = (event: ChangeEvent<any>) => {
+    setOptionSelected(parseInt(event.target!.value));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <SelectorScreen optionSelected={optionSelected} onChangeOption={onChangeOption} />
+      {OptionsSelectedModule.searchImage === optionSelected && <SearchImage />}
+      {OptionsSelectedModule.form === optionSelected && <ControllerForm />}
+      {OptionsSelectedModule.searchFilms === optionSelected && <SearchFilms />}
+      {OptionsSelectedModule.chatRandom === optionSelected && <ChatRandom />}
+      {OptionsSelectedModule.listTask === optionSelected && <ListTask />}
+      {OptionsSelectedModule.observerPattern === optionSelected && <FatherComponent />}
+      {OptionsSelectedModule.apiContext === optionSelected && <FatherContextComponent />}
     </div>
   );
-}
+};
 
 export default App;
