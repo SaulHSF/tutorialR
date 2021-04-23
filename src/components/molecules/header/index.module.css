@@ -1,0 +1,9 @@
+.container {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #0240E8;
+}
+.title {
+  font-style: italic;
+  color: #0240E8;
+}

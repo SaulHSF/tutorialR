@@ -14,7 +14,7 @@ interface SelectorScreenProps {
 }
 
 const SelectorScreen = (props: SelectorScreenProps) => {
-  const { optionSelected = OptionsSelectedModule.apiContext, onChangeOption } = props;
+  const { optionSelected = OptionsSelectedModule.animationsAndTransitions, onChangeOption } = props;
 
   return (
     <div className={styles.container}>
@@ -25,6 +25,13 @@ const SelectorScreen = (props: SelectorScreenProps) => {
         <option value={OptionsSelectedModule.chatRandom}>Chat random (get­Snapshot­Before­Update, component­Did­Update)</option>
         <option value={OptionsSelectedModule.observerPattern}>Patron Observador - PubSubjs</option>
         <option value={OptionsSelectedModule.apiContext}>Api Context</option>
+        <option value={OptionsSelectedModule.patternRenderProp}>Pattern Render Prop</option>
+        <option value={OptionsSelectedModule.hoc}>(HOC) High Order Component</option>
+        <option value={OptionsSelectedModule.hooks}>uso de los Hooks</option>
+        <option value={OptionsSelectedModule.children}>children uso</option>
+        <option value={OptionsSelectedModule.codeSplitting}>Separacion y carga perezosa (codeSplitting y lazy loading)</option>
+        <option value={OptionsSelectedModule.animationsAndTransitions}>Animaciones y transiciones CSS</option>
+        <option value={OptionsSelectedModule.componentStyles}>Component Styles</option>
       </select>
     </div>
   );

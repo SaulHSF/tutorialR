@@ -1,0 +1,12 @@
+.transition {
+  transition: all 1.5s 1s ease;
+  /**
+   * Prefijo web
+   */
+  /** basados en webkit **/
+  -webkit-transition: all 1.5s 1s ease;
+  /** para mozilla **/
+  -moz-transition: all 1.5s 1s ease;
+  /** para opera **/
+  -o-transitions: all 1.5s 1s ease;
+}

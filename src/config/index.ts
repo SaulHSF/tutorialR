@@ -12,6 +12,8 @@ export const KEY_OMDBAPI = '?i=tt3896198&apikey=c6ae8112';
 
 export const URL_API_OMDBAPI = `http://www.omdbapi.com/`;
 
+export const URL_JSONPLACEHOLDER = 'https://jsonplaceholder.typicode.com/';
+
 export enum OptionsSelectedModule {
   searchImage,
   form,
@@ -19,5 +21,25 @@ export enum OptionsSelectedModule {
   chatRandom,
   listTask,
   observerPattern,
-  apiContext
+  apiContext,
+  patternRenderProp,
+  hoc,
+  hooks,
+  children,
+  codeSplitting,
+  animationsAndTransitions,
+  componentStyles
 }
+
+// Paleta de colores
+export const THEME_PRIMARY = {
+  primary: '#00ACE0',
+  primaryDark: '#0C42ED',
+  primaryLight: '#0CF7F0',
+  light: '#ffffff'
+};
+
+// constantes completas
+export const METRIC_COMPONENTS = {
+  padding: 'padding: 1em;'
+};

@@ -1,0 +1,47 @@
+.defaultTestCSS {
+  background: black;
+  transform: scale(0);
+  /*position: absolute;*/
+  text-align: center;
+  border-radius: 0.4em;
+  color: orange;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 14px;
+  transition: all 800ms ease;
+}
+
+.activeTestCSS {
+  /*background: #3d1f9a;*/
+  /*transform: scale(1);*/
+  /*color: #000;*/
+  animation: showUp 1500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.hideTestCSS {
+  animation: hideUp 1500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showUp {
+  0% {
+    background: black;
+    transform: scale(0) rotate(360deg);
+  }
+  100% {
+    background: purple;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes hideUp {
+  0% {
+    background: purple;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    background: black;
+    transform: scale(0) rotate(360deg);
+  }
+}
