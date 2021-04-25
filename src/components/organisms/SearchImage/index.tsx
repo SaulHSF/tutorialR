@@ -13,33 +13,34 @@ import styles from '../../atoms/images/index.module.css';
 // Services
 import PexelsProvider from '../../../services/api/Pexels';
 
-const photosDefault: Array<DataPhoto> = [];
-
 const SearchImage = () => {
-  const [photos, setPhotos] = useState(photosDefault);
+  const [photos, setPhotos] = useState<Array<DataPhoto>>([]);
   const [setTimeOut, setSetTimeOut] = useState();
 
-  const searchPhotos = async (data: any) => {
+  const searchPhotos = async (data: React.ChangeEvent<HTMLInputElement>) => {
     const value = data.currentTarget.value;
-    const result: Array<DataPhoto> = [];
-    clearTimeout(setTimeOut);
-    setSetTimeOut(
-      setTimeout(async () => {
-        const { data, status } = await PexelsProvider.searchPhoto(value);
-        if (status === 200) {
-          if (data.photos.length > 0) {
-            data.photos.forEach((element: { id: number; photographer: string; src: { medium: string } }) => {
-              result.push({ photo: element.src.medium, nameAuthor: element.photographer, id: element.id });
-            });
-            // console.log('result', result);
-            setPhotos(result);
-          } else {
-            setPhotos([]);
+    if (value.length > 3) {
+      clearTimeout(setTimeOut);
+      setSetTimeOut(
+        setTimeout(async () => {
+          const { data, status } = await PexelsProvider.searchPhoto(value);
+          if (status === 200) {
+            if (data.photos.length > 0) {
+              setPhotos(
+                data.photos.map((element: { id: number; photographer: string; src: { medium: string } }) => ({
+                  photo: element.src.medium,
+                  nameAuthor: element.photographer,
+                  id: element.id
+                }))
+              );
+            } else {
+              setPhotos([]);
+            }
           }
-        }
-        // console.log(data, status);
-      }, 500)
-    );
+          // console.log(data, status);
+        }, 500)
+      );
+    }
   };
 
   return (
